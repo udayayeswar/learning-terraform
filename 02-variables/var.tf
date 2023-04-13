@@ -10,3 +10,37 @@ output "sample" {
 output "sample1" {
   value = "Hey, ${var.sample}"
 }
+
+#string data type
+variable "sample1" {
+  default = "Hello World"
+}
+
+#Number data type
+variable "sample2" {
+  default = 100
+}
+
+#Boolean data type
+variable "sample3"{
+  default = true
+}
+
+#List variable
+variable "sample4" {
+  default = {
+    "hello"
+    100
+    true
+  }
+}
+
+#Map variable
+variable "sample5" {
+  default = {
+    string = "hello"
+    number = 100
+    boolean = true
+  }
+
+}
