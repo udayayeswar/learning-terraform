@@ -42,5 +42,9 @@ variable "sample5" {
     number = 100
     boolean = true
   }
+}
 
+#Access avariable
+output  "sample4" {
+  value = var.sample4
 }
