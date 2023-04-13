@@ -44,7 +44,12 @@ variable "sample5" {
   }
 }
 
-#Access avariable
+#Access a list variable
 output  "sample4" {
   value = var.sample4[0]
+}
+
+#Access a map variable
+output  "sample5" {
+  value = var.sample4["string"]
 }
