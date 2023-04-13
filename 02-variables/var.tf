@@ -22,17 +22,17 @@ variable "sample2" {
 }
 
 #Boolean data type
-variable "sample3"{
+variable "sample3" {
   default = true
 }
 
 #List variable
 variable "sample4" {
-  default = {
-    "hello"
-    100
+  default = [
+    "hello",
+    100,
     true
-  }
+  ]
 }
 
 #Map variable
