@@ -46,5 +46,5 @@ variable "sample5" {
 
 #Access avariable
 output  "sample4" {
-  value = var.sample4
+  value = var.sample4[0]
 }
