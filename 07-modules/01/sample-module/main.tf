@@ -1,4 +1,4 @@
-resource "lacal_file" "test" {
+resource "local_file" "test" {
   content  = "hello"
   filename = "/tmp/test"
 }
