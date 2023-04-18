@@ -67,3 +67,7 @@ resource "null_resource" "test" {
     command = "echo hello world"
   }
   }
+
+locals {
+  message = "echo hello world"
+}
