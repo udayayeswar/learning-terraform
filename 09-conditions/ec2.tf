@@ -2,11 +2,11 @@ resource "aws_instance" "sample" {
   ami                    = "ami-0bb6af715826253bf"
   instance_type          = "t3.micro"
   vpc_security_group_ids = aws_security_group.allow_ssh.*.id
+  tags = {
+    Name = "test"
+  }
 }
 
-tags = {
-  Name = "test"
-}
 
 resource "aws_security_group" "allow_ssh" {
   count       =var.create_sg ? 1 : 0
