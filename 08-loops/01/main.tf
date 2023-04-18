@@ -6,3 +6,8 @@ resource "aws_instance" "sample" {
     Name = "test-${count.index}"
   }
 }
+
+#if you have any resources with multiple count then if you want to refer that attribute you want to use *.
+output "public_ip" {
+  value = aws_instance.sample.*.public_ip
+}
