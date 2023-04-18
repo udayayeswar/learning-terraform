@@ -5,6 +5,18 @@ resource "aws_instance" "sample" {
   tags = {
     Name = "test"
   }
+  provisioner "remote_exec" {
+    connection {
+      type     = "ssh"
+      user     = root
+      password = "DevOps321"
+      host     = self.public_ip
+    }
+    inline = [
+      "yum install nginx -y",
+      "systemctl start nginx"
+    ]
+  }
 }
 
 
@@ -19,6 +31,15 @@ resource "aws_security_group" "allow_ssh" {
     description      = "TLS from VPC"
     from_port        = 22
     to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+
+  }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
 
